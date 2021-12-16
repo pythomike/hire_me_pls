@@ -16,3 +16,9 @@ Include some aspect of DevOps/Platform work, which may include any of the follow
   - CircleCI
   - DockerHub
   - Heroku
+
+## To Run Locally
+1. Clone repo
+2. `pip install -r requirements.txt`
+3. `python main.py`
+
