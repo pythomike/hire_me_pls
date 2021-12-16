@@ -1,9 +1,10 @@
-from flask import Flask, Response
+from flask import Flask, Response, json
 from datetime import datetime, timedelta
 
 
 app = Flask(__name__)
 start = datetime.now()
+ready_threshhold = int(10)
 
 @app.route('/')
 def index():
@@ -16,9 +17,11 @@ def pulse_check():
 @app.route('/status/ready')
 def ready_check():
     lifetime = (datetime.now() - start).total_seconds()
-    if lifetime < 10:
-        return Response("yea boye")
-    return "Ready test"
+    
+    if lifetime < ready_threshhold:
+        return Response(json.dumps({'ready': False}), status=500)
+    else:
+        return Response(json.dumps({'ready': True}), status=200)
 
 
 if __name__ == "__main__":
