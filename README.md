@@ -17,6 +17,11 @@ Include some aspect of DevOps/Platform work, which may include any of the follow
   - DockerHub
   - Heroku
 
+## To Finish
+1. Dockerize.
+2. Sort out CircleCI.
+3. Let's get this in to EC2!
+
 ## To Run Locally
 1. Clone repo
 2. `pip install -r requirements.txt`
