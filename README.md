@@ -27,3 +27,7 @@ Include some aspect of DevOps/Platform work, which may include any of the follow
 2. `pip install -r requirements.txt`
 3. `python main.py`
 
+## cURL All Endpoints
+curl -v 127.0.0.1:5000/
+curl -v 127.0.0.1:5000/status/alive
+curl -v 127.0.0.1:5000/status/ready

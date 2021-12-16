@@ -8,7 +8,7 @@ ready_threshhold = int(10)
 
 @app.errorhandler(404)
 def resource_not_found(e):
-    return jsonify(error=str(e)), 404
+    return jsonify(error="Sorry, I can't find that"), 404
 
 @app.route('/')
 def index():
