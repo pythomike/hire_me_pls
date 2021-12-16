@@ -1,10 +1,14 @@
-from flask import Flask, Response, json
+from flask import Flask, Response, jsonify, json
 from datetime import datetime, timedelta
 
 
 app = Flask(__name__)
 start = datetime.now()
 ready_threshhold = int(10)
+
+@app.errorhandler(404)
+def resource_not_found(e):
+    return jsonify(error=str(e)), 404
 
 @app.route('/')
 def index():
