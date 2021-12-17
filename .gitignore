@@ -10,3 +10,4 @@ venv.bak/
 # Other
 .DS_Store
 __pycache__/
+.pytest*
