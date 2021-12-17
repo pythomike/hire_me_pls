@@ -1,32 +1,30 @@
+from datetime import datetime
 from flask import Flask, Response, jsonify, json
-from datetime import datetime, timedelta
 
 
-app = Flask(__name__)
-start = datetime.now()
-ready_threshhold = int(10)
+APP = Flask(__name__)
+START = datetime.now()
+READY_THRESHHOLD = int(10)
 
-@app.errorhandler(404)
+@APP.errorhandler(404)
 def resource_not_found(e):
-    return jsonify(error=str(e)), 404
+    return jsonify(error="Sorry, I can't find that"), 404
 
-@app.route('/')
+@APP.route('/')
 def index():
     return "Hello world"
 
-@app.route('/status/alive')
+@APP.route('/status/alive')
 def pulse_check():
     return Response(status=200)
 
-@app.route('/status/ready')
+@APP.route('/status/ready')
 def ready_check():
-    lifetime = (datetime.now() - start).total_seconds()
-    
-    if lifetime < ready_threshhold:
+    lifetime = (datetime.now() - START).total_seconds()
+    if lifetime < READY_THRESHHOLD:
         return Response(json.dumps({'ready': False}), status=500)
-    else:
-        return Response(json.dumps({'ready': True}), status=200)
+    return Response(json.dumps({'ready': True}), status=200)
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    APP.run()

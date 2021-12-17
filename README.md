@@ -17,8 +17,24 @@ Include some aspect of DevOps/Platform work, which may include any of the follow
   - DockerHub
   - Heroku
 
+## To Finish
+1. ~~Dockerize.~~
+2. Sort out CircleCI.
+3. Let's get this in to EC2!
+
 ## To Run Locally
 1. Clone repo
-2. `pip install -r requirements.txt`
-3. `python main.py`
+2. `docker build -t platform .`
+3. `docker run -d -p 8000:8000 platform`
 
+## cURL All Endpoints
+curl -v 127.0.0.1:5000/
+curl -v 127.0.0.1:5000/status/alive
+curl -v 127.0.0.1:5000/status/ready
+
+## Issues
+1. Early goof renaming master > main. First commits were to the main branch renamed "readme_and_basic_structure"
+
+
+## Things to Implement
+1. Pylint Github Action (couldn't figure out how to eliminate some stlye checks - function docstrings)
