@@ -25,3 +25,9 @@ def test_ready(app, client):
     assert response.status_code == 200
     expected = {"ready": True}
     assert expected == json.loads(response.get_data(as_text=True))
+
+def test_not_found(app, client):
+    response = client.get('/sttuss/awefawe')
+    assert response.status_code==404
+    expected = {'error':'Sorry, I can\'t find that'}
+    assert expected == json.loads(response.get_data(as_text=True))
