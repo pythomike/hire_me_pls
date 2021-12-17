@@ -18,14 +18,13 @@ Include some aspect of DevOps/Platform work, which may include any of the follow
   - Heroku
 
 ## To Finish
-1. Dockerize.
+1. ~~Dockerize.~~
 2. Sort out CircleCI.
 3. Let's get this in to EC2!
 
 ## To Run Locally
 1. Clone repo
-2. `pip install -r requirements.txt`
-3. `python main.py`
+2. `docker build -t platform .`
 
 ## cURL All Endpoints
 curl -v 127.0.0.1:5000/
