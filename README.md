@@ -19,8 +19,13 @@ Include some aspect of DevOps/Platform work, which may include any of the follow
 
 ## To Finish
 1. ~~Dockerize.~~
-2. Sort out CircleCI.
+2. ~~Sort out CircleCI.~~
 3. Let's get this in to EC2!
+
+## What Is This?
+A small app written in Python using Flask, pytest, and gunicorn. It serves three endpoints as outlined in the test requirements, and has basic error handling for unexpected URLs.
+
+The app can be run directly with `python main.py`, but it's also set up to run in a Docker container. The repo is set up to run basic endpoint tests when attempting to merge branches.
 
 ## To Run Locally
 1. Clone repo
@@ -34,7 +39,5 @@ curl -v 127.0.0.1:8000/status/ready
 
 ## Issues
 1. Early goof renaming master > main. First commits were to the main branch renamed "readme_and_basic_structure"
-
-
-## Things to Implement
-1. Pylint Github Action (couldn't figure out how to eliminate some stlye checks - function docstrings)
+2. Repo name stopped being funny after ~10 minutes
+3. I was troubleshooting a dependency issue with circleCI and had the actual tests commented out until 11:56am today
