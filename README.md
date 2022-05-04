@@ -2,6 +2,8 @@
 
 ## Update: I am now a Platform Engineer 1! 🎉
 
+Heyo testing!
+
 We would like you to write a small trivial application in any language of your choosing that provides the following HTTP endpoints…
 
 - `GET /` Returns plain-text “Hello world” and HTTP status code 200
